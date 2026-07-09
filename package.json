@@ -6,11 +6,11 @@
   "scripts": {
     "clean": "rimraf out",
     "build:docs": "NODE_ENV=production node buildTutorial.js",
-    "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
+    "build:webpack": "NODE_ENV=production NODE_OPTIONS=--openssl-legacy-provider webpack --config webpack.config.prod.js",
     "build": "yarn run clean && yarn run build:webpack && yarn run build:docs",
     "test": "true",
     "fmt": "prettier --write 'src/**/*.js'",
-    "start": "webpack --config ./webpack.config.dev.js",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider webpack --config ./webpack.config.dev.js",
     "tutorial-dev": "./tutorialDev.js",
     "deploy": "./deploy-ghpages.sh"
   },
@@ -72,6 +72,9 @@
     "webpack-hot-middleware": "^2.25.0",
     "webpack-plugin-replace": "^1.2.0",
     "webpack-serve": "^3.2.0"
+  },
+  "resolutions": {
+    "css-loader/postcss": "^8.4.31"
   },
   "dependencies": {
     "@reach/auto-id": "^0.12.1",
