@@ -14,6 +14,7 @@ var fontBaseURL = process.env.WEBFONT_BASE_URL;
 
 module.exports = {
   mode: "development",
+  devtool: "eval-source-map",
   entry: ["./src/index", "webpack-plugin-serve/client"],
   output: {
     path: outputPath,
