@@ -4,6 +4,12 @@ An attempt at a fully recreated web-based TR-808 drum machine using React, Redux
 
 As an amateur/bedroom music producer I've always been fascinated with the impact and history of the TR-808. While trying to learn the new Web Audio API I attempted to try and recreate a few of the sounds by referencing the Sound on Sound Synth Secrets series and the block diagrams of the 808 itself. It became addicting and once I had most of the sounds done, I figured recreating the interface/functionality was the next logical step. I hope you enjoy it as much as I did making it!
 
+## Dockerization
+```
+docker build -t io-808 -f Dockerfile.dev .
+docker run -p 3003:3003 io-808  
+```
+
 ## Tools/Libraries Overview
 
 Like most web/JavaScript developers, I sit on the shoulders of giants. Here's a brief list of the notable dependencies used in this project:
